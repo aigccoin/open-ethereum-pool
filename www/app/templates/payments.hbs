@@ -21,7 +21,8 @@
         {{#each model.payments as |tx|}}
           <tr>
             <td>{{format-date-locale tx.timestamp}}</td>
-            <td>{{format-number tx.formatAmount}}</td>
+            {{!-- <td>{{format-number tx.formatAmount}}</td> --}}
+            <td>{{tx.formatAmount}}</td> 
             <td>
               <a href="https://etherscan.io/address/{{tx.address}}" class="hash" rel="nofollow" target="_blank">{{tx.address}}</a>
             </td>

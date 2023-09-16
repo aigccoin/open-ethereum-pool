@@ -11,7 +11,7 @@
   {{#if model.luck}}
     {{partial "luck"}}
   {{/if}}
-  <ul class="nav nav-tabs">
+  {{!-- <ul class="nav nav-tabs">
     {{#active-li currentWhen='blocks.index' role='presentation'}}
       {{#link-to 'blocks.index'}}Blocks <span class="badge alert-success">{{format-number model.maturedTotal}}</span>{{/link-to}}
     {{/active-li}}
@@ -21,6 +21,17 @@
     {{#active-li currentWhen='blocks.pending' role='presentation'}}
       {{#link-to 'blocks.pending'}}New Blocks <span class="badge alert-info">{{format-number model.candidatesTotal}}</span>{{/link-to}}
     {{/active-li}}
-  </ul>
+  </ul> --}}
+  <ul class="nav nav-tabs">
+    {{#active-li currentWhen='blocks.index' role='presentation'}}
+      {{#link-to 'blocks.index'}}Blocks <span class="badge alert-success">{{model.maturedTotal}}</span>{{/link-to}}
+    {{/active-li}}
+    {{#active-li currentWhen='blocks.immature' role='presentation'}}
+      {{#link-to 'blocks.immature'}}Immature <span class="badge alert-success">{{model.immatureTotal}}</span>{{/link-to}}
+    {{/active-li}}
+    {{#active-li currentWhen='blocks.pending' role='presentation'}}
+      {{#link-to 'blocks.pending'}}New Blocks <span class="badge alert-info">{{model.candidatesTotal}}</span>{{/link-to}}
+    {{/active-li}}
+  </ul>  
   {{outlet}}
 </div>
